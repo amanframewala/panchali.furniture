@@ -47,6 +47,22 @@
             font-weight: bold;
             text-decoration: none;
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         .nav-links {
@@ -67,7 +83,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f9fa" width="1200" height="600"/><text x="600" y="300" text-anchor="middle" fill="%23666" font-size="24" font-family="Arial">Premium Furniture Showcase</text></svg>');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f4f4f4" width="1200" height="600"/><rect fill="%23e0e0e0" x="100" y="200" width="200" height="150" rx="10"/><rect fill="%23d0d0d0" x="350" y="150" width="180" height="200" rx="10"/><rect fill="%23e0e0e0" x="580" y="180" width="160" height="140" rx="10"/><rect fill="%23d0d0d0" x="790" y="160" width="200" height="180" rx="10"/><text x="600" y="400" text-anchor="middle" fill="%23666" font-size="24" font-family="Arial">Premium Furniture Collection</text></svg>');
             height: 100vh;
             display: flex;
             align-items: center;
@@ -76,6 +92,66 @@
             color: white;
             background-size: cover;
             background-position: center;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-image {
+            height: 250px;
+            background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .gallery-image::before {
+            content: '📸';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
         }
 
         .hero-content h1 {
@@ -430,7 +506,11 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">Panchali Furniture</a>
+            <a href="#" class="logo">
+                <img src="https://ugc.production.linktr.ee/bbbb3f23-d90c-4182-a501-e120b62c53ea_panchali-logo-final.jpeg?io=true&size=avatar-v3_0" alt="" srcset="">
+                <!-- <div class="logo-image">PF</div> -->
+                Panchali Furniture
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -465,9 +545,69 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <div style="background: linear-gradient(45deg, #3498db, #2c3e50); height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
-                        Quality Craftsmanship Since 1989
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                Showroom Interior View
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                Quality Furniture Display
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Our Showroom & Products</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Showroom Exterior<br/>
+                        <small>Crown Plaza, APMC Road</small>
+                    </div>
+                    <div class="gallery-caption">Our Premium Showroom</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Living Room Display<br/>
+                        <small>Sofa Sets & Coffee Tables</small>
+                    </div>
+                    <div class="gallery-caption">Living Room Collection</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Bedroom Furniture<br/>
+                        <small>Beds & Wardrobes</small>
+                    </div>
+                    <div class="gallery-caption">Bedroom Sets</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Dining Room Setup<br/>
+                        <small>Tables & Chairs</small>
+                    </div>
+                    <div class="gallery-caption">Dining Collections</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Office Furniture<br/>
+                        <small>Desks & Chairs</small>
+                    </div>
+                    <div class="gallery-caption">Office Solutions</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Interior Design<br/>
+                        <small>Complete Room Setup</small>
+                    </div>
+                    <div class="gallery-caption">Interior Design Service</div>
                 </div>
             </div>
         </div>
@@ -577,8 +717,8 @@
                     Maharashtra 400705</p>
                     
                     <p><strong>Business Hours:</strong><br>
-                    Tuesday - Sunday: 11:00 AM - 8:00 PM<br>
-                    <!-- Sunday: 10:00 AM - 6:00 PM</p> -->
+                    Monday - Saturday: 10:00 AM - 8:00 PM<br>
+                    Sunday: 10:00 AM - 6:00 PM</p>
                     
                     <p><strong>Why Choose Us?</strong><br>
                     • 35+ Years of Experience<br>
@@ -622,8 +762,8 @@
                     <p>Your trusted furniture partner since 1989. We specialize in premium quality furniture with exceptional after-sales service.</p>
                     <div class="social-links">
                         <a href="#" title="Facebook">f</a>
-                        <a href="https://instagram.com/panchali.furniture" title="Instagram">📷</a>
-                        <a href="https://api.whatsapp.com/send?phone=9320033722" title="WhatsApp">💬</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="WhatsApp">💬</a>
                     </div>
                 </div>
                 <div class="footer-section">
